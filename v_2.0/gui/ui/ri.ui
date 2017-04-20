@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RI_dialog</class>
+ <widget class="QDialog" name="RI_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>276</width>
+    <height>193</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RI</string>
+  </property>
+  <widget class="QLineEdit" name="current_ri_lineedit">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>60</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="compliance_ri_lineedit">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>100</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="current_ri_label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>61</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Current:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="compliance_ri_label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Compliance:
+(current)</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="measure_ri_button">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>150</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Medir</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="smu_label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>61</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SMU #:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="smu_lineedit">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>20</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

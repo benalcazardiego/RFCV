@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1150</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1150</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>SMU</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="4" column="0">
+     <widget class="QPushButton" name="measure_vna">
+      <property name="text">
+       <string>Medir E5071C</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="measure_button">
+      <property name="text">
+       <string>Medir K4200</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <layout class="QVBoxLayout" name="vna_ip_file_layout">
+      <item>
+       <layout class="QHBoxLayout" name="vna_ip_layout">
+        <item>
+         <widget class="QLabel" name="vna_ip_label">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>IP:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="vna_ip_field"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="vna_file_layout">
+        <item>
+         <widget class="QLabel" name="file_ip_label">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Archivo:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="vna_file_field"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="vna_browse_button">
+          <property name="text">
+           <string>Examinar</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="ip_file_layout" stretch="0,0">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="ipLabel">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>IP:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="ipField">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>25</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Archivo:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="fileField">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>25</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="browse_button">
+          <property name="text">
+           <string>Examinar</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="5" column="0">
+     <layout class="QHBoxLayout" name="bottom_layout">
+      <item>
+       <widget class="QGroupBox" name="s_groupbox">
+        <property name="title">
+         <string>Parámetros S a medir</string>
+        </property>
+        <widget class="QRadioButton" name="s11_radio">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>80</y>
+           <width>61</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>S11</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="s12_radio">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>100</y>
+           <width>61</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>S12</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="s21_radio">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>120</y>
+           <width>61</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>S21</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="s22_radio">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>140</y>
+           <width>61</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>S22</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="all_checkbox">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>89</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Todos</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="format_groupbox">
+        <property name="title">
+         <string>Configuración</string>
+        </property>
+        <widget class="QComboBox" name="format_combobox">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>40</y>
+           <width>181</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Log</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Lin</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Lin/Phase</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Phase</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Group Delay</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Smith Chart (Lin/Phase)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Smith Chart (Log/Phase)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Smith (Re/Im)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Smith (R+jX)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Smith (G+jB)</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="format_label">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>50</y>
+           <width>61</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Formato:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="points_label">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>80</y>
+           <width>61</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Puntos:</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="points_field">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>80</y>
+           <width>181</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="autoscale_checkbox">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>110</y>
+           <width>89</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Autoscale</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="measuretype_groupbox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Tipo de medición</string>
+          </property>
+          <widget class="QRadioButton" name="start_stop_radio">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>104</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Inicio-final</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="center_span_radio">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>70</y>
+             <width>104</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Centro-span</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="left_button">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>40</y>
+             <width>51</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="right_button">
+           <property name="geometry">
+            <rect>
+             <x>190</x>
+             <y>40</y>
+             <width>51</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&gt;</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="x_label">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>80</y>
+             <width>71</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="y_re_label">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>100</y>
+             <width>71</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="xdesc_label">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>80</y>
+             <width>31</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Frec:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="ydesc_re_label">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>100</y>
+             <width>41</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Re(y):</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="ydesc_re_label_2">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>120</y>
+             <width>41</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Im(y):</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="y_im_label">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>120</y>
+             <width>71</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="freq_groupbox">
+        <property name="title">
+         <string>Frecuencia</string>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>261</width>
+           <height>107</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="freqstart_label">
+              <property name="text">
+               <string>Frecuencia inicial</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="freqstart_field"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="freqstop_label">
+              <property name="text">
+               <string>Frecuencia final</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="freqstop_field"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="range_label">
+              <property name="text">
+               <string>Rango</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="range_field"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="mainLayout">
+      <item>
+       <layout class="QVBoxLayout" name="smu1_layout">
+        <item>
+         <widget class="QLabel" name="smu1_label">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>SMU 1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="smu1_combo"/>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="smu1_groupbox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="smu2_layout">
+        <item>
+         <widget class="QLabel" name="smu2_label">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>SMU 2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="smu2_combo"/>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="smu2_groupbox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="smu3_layout">
+        <item>
+         <widget class="QLabel" name="smu3_label">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>SMU 3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="smu3_combo"/>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="smu3_groupbox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="smu4_layout">
+        <item>
+         <widget class="QLabel" name="smu4_label">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>SMU 4</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="smu4_combo"/>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="smu4_groupbox">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1150</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionAbrir"/>
+    <addaction name="actionGuardar"/>
+    <addaction name="actionGuardar_como"/>
+    <addaction name="actionCalibration"/>
+    <addaction name="actionCalibration_Presets"/>
+    <addaction name="actionContinuo_Alterno"/>
+    <addaction name="actionRI"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+  </widget>
+  <action name="actionGuardar">
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+  </action>
+  <action name="actionGuardar_como">
+   <property name="text">
+    <string>Guardar como...</string>
+   </property>
+  </action>
+  <action name="actionAbrir">
+   <property name="text">
+    <string>Abrir...</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionCalibration">
+   <property name="text">
+    <string>Calibration VNA</string>
+   </property>
+  </action>
+  <action name="actionRI">
+   <property name="text">
+    <string>RI</string>
+   </property>
+  </action>
+  <action name="actionCalibration_Presets">
+   <property name="text">
+    <string>Calibration Presets</string>
+   </property>
+  </action>
+  <action name="actionContinuo_Alterno">
+   <property name="text">
+    <string>Continuo-Alterno</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
